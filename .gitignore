@@ -42,3 +42,11 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Runtime data (keep directories, ignore contents)
+/data/*.json
+/public/uploads/*
+!public/uploads/.gitkeep
+
+# Environment
+.env

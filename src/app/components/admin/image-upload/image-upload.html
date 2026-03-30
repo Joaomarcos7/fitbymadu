@@ -1,0 +1,15 @@
+<div class="flex items-center gap-3">
+  @if (currentUrl()) {
+    <img [src]="currentUrl()" alt="preview" class="w-12 h-12 object-cover rounded-lg border border-gray-200 shrink-0" />
+  }
+  <label class="inline-flex items-center gap-2 cursor-pointer bg-gray-50 hover:bg-pink-soft border border-dashed border-gray-300 hover:border-pink text-gray-500 hover:text-pink text-xs font-semibold px-3 py-2 rounded-xl transition-colors">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/>
+    </svg>
+    {{ uploading() ? 'Enviando...' : 'Upload' }}
+    <input type="file" accept="image/jpeg,image/png,image/webp" class="hidden" (change)="onFile($event)" [disabled]="uploading()" />
+  </label>
+  @if (error()) {
+    <span class="text-red-500 text-xs">{{ error() }}</span>
+  }
+</div>

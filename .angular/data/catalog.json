@@ -1,0 +1,297 @@
+[
+  {
+    "id": 1,
+    "slug": "top-fitness-essencial",
+    "title": "Top Fitness Essencial",
+    "tag": "Top",
+    "price": 89.9,
+    "image": "https://picsum.photos/seed/fit1/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit1/600/800",
+      "https://picsum.photos/seed/fit1b/600/800",
+      "https://picsum.photos/seed/fit1c/600/800"
+    ],
+    "description": "Top de alta performance com suporte médio, ideal para treinos intensos ou pilates. Tecido com tecnologia de secagem rápida e proteção UV50+. O design anatômico se adapta ao movimento do corpo, garantindo liberdade e conforto em cada repetição.",
+    "texture": "Poliamida 80% · Elastano 20% · Secagem rápida · UV50+",
+    "sizes": [
+      "PP",
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "colors": [
+      {
+        "name": "Rosa",
+        "hex": "#F472B6",
+        "images": [
+          "https://picsum.photos/seed/fit1/600/800",
+          "https://picsum.photos/seed/fit1b/600/800"
+        ]
+      },
+      {
+        "name": "Preto",
+        "hex": "#1a1a1a",
+        "images": [
+          "https://picsum.photos/seed/fit1d/600/800",
+          "https://picsum.photos/seed/fit1e/600/800"
+        ]
+      },
+      {
+        "name": "Branco",
+        "hex": "#e5e5e5",
+        "images": [
+          "https://picsum.photos/seed/fit1f/600/800",
+          "https://picsum.photos/seed/fit1g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "5–10 dias úteis"
+  },
+  {
+    "id": 2,
+    "slug": "legging-high-waist",
+    "title": "Legging High Waist",
+    "tag": "Legging",
+    "price": 139.9,
+    "image": "https://picsum.photos/seed/fit2/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit2/600/800",
+      "https://picsum.photos/seed/fit2b/600/800",
+      "https://picsum.photos/seed/fit2c/600/800"
+    ],
+    "description": "Legging cintura alta com compressão suave que valoriza a silhueta e proporciona sustentação durante o treino. Perfeita para squats, corrida e yoga. Tecido opaco e resistente à transparência.",
+    "texture": "Poliamida 75% · Elastano 25% · Compressão suave · Opaco",
+    "sizes": [
+      "PP",
+      "P",
+      "M",
+      "G",
+      "GG",
+      "XGG"
+    ],
+    "colors": [
+      {
+        "name": "Rosa",
+        "hex": "#F472B6",
+        "images": [
+          "https://picsum.photos/seed/fit2/600/800",
+          "https://picsum.photos/seed/fit2b/600/800"
+        ]
+      },
+      {
+        "name": "Preto",
+        "hex": "#1a1a1a",
+        "images": [
+          "https://picsum.photos/seed/fit2d/600/800",
+          "https://picsum.photos/seed/fit2e/600/800"
+        ]
+      },
+      {
+        "name": "Roxo",
+        "hex": "#a855f7",
+        "images": [
+          "https://picsum.photos/seed/fit2f/600/800",
+          "https://picsum.photos/seed/fit2g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "5–10 dias úteis"
+  },
+  {
+    "id": 3,
+    "slug": "conjunto-treino-pro",
+    "title": "Conjunto Treino Pro",
+    "tag": "Conjunto",
+    "price": 219.9,
+    "image": "https://picsum.photos/seed/fit3/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit3/600/800",
+      "https://picsum.photos/seed/fit3b/600/800",
+      "https://picsum.photos/seed/fit3c/600/800"
+    ],
+    "description": "Conjunto completo (top + legging) desenvolvido para quem leva o treino a sério. Combinação perfeita de estilo e funcionalidade — ideal para academia, crossfit e funcional.",
+    "texture": "Poliamida 78% · Elastano 22% · Secagem ultra-rápida · Anti-odor",
+    "sizes": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "colors": [
+      {
+        "name": "Rosa Neon",
+        "hex": "#f9a8d4",
+        "images": [
+          "https://picsum.photos/seed/fit3/600/800",
+          "https://picsum.photos/seed/fit3b/600/800"
+        ]
+      },
+      {
+        "name": "Preto",
+        "hex": "#1a1a1a",
+        "images": [
+          "https://picsum.photos/seed/fit3d/600/800",
+          "https://picsum.photos/seed/fit3e/600/800"
+        ]
+      },
+      {
+        "name": "Vermelho",
+        "hex": "#ef4444",
+        "images": [
+          "https://picsum.photos/seed/fit3f/600/800",
+          "https://picsum.photos/seed/fit3g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "7–12 dias úteis"
+  },
+  {
+    "id": 4,
+    "slug": "short-workout",
+    "title": "Short Workout",
+    "tag": "Short",
+    "price": 99.9,
+    "image": "https://picsum.photos/seed/fit4/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit4/600/800",
+      "https://picsum.photos/seed/fit4b/600/800",
+      "https://picsum.photos/seed/fit4c/600/800"
+    ],
+    "description": "Short de treino com cintura alta e modelagem que valoriza as curvas. Tecido leve e ventilado para treinos ao ar livre ou na academia. Possui bolso interno para guardar o celular.",
+    "texture": "Poliéster 85% · Elastano 15% · Leve · Ventilado · Com bolso",
+    "sizes": [
+      "PP",
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "colors": [
+      {
+        "name": "Rosa",
+        "hex": "#F472B6",
+        "images": [
+          "https://picsum.photos/seed/fit4/600/800",
+          "https://picsum.photos/seed/fit4b/600/800"
+        ]
+      },
+      {
+        "name": "Amarelo",
+        "hex": "#eab308",
+        "images": [
+          "https://picsum.photos/seed/fit4d/600/800",
+          "https://picsum.photos/seed/fit4e/600/800"
+        ]
+      },
+      {
+        "name": "Preto",
+        "hex": "#1a1a1a",
+        "images": [
+          "https://picsum.photos/seed/fit4f/600/800",
+          "https://picsum.photos/seed/fit4g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "5–10 dias úteis"
+  },
+  {
+    "id": 5,
+    "slug": "regata-performance",
+    "title": "Regata Performance",
+    "tag": "Regata",
+    "price": 79.9,
+    "image": "https://picsum.photos/seed/fit5/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit5/600/800",
+      "https://picsum.photos/seed/fit5b/600/800",
+      "https://picsum.photos/seed/fit5c/600/800"
+    ],
+    "description": "Regata fitness com corte moderno e tecido que não retém calor. Ideal para treinos de musculação, corrida e funcional. Design com recortes estratégicos para máxima ventilação.",
+    "texture": "Poliéster 90% · Elastano 10% · Dry-fit · UV30+",
+    "sizes": [
+      "PP",
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "colors": [
+      {
+        "name": "Branco",
+        "hex": "#e5e5e5",
+        "images": [
+          "https://picsum.photos/seed/fit5/600/800",
+          "https://picsum.photos/seed/fit5b/600/800"
+        ]
+      },
+      {
+        "name": "Rosa",
+        "hex": "#F472B6",
+        "images": [
+          "https://picsum.photos/seed/fit5d/600/800",
+          "https://picsum.photos/seed/fit5e/600/800"
+        ]
+      },
+      {
+        "name": "Azul",
+        "hex": "#3b82f6",
+        "images": [
+          "https://picsum.photos/seed/fit5f/600/800",
+          "https://picsum.photos/seed/fit5g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "5–10 dias úteis"
+  },
+  {
+    "id": 6,
+    "slug": "legging-compressao",
+    "title": "Legging Compressão",
+    "tag": "Legging",
+    "price": 159.9,
+    "image": "https://picsum.photos/seed/fit6/600/800",
+    "images": [
+      "https://picsum.photos/seed/fit6/600/800",
+      "https://picsum.photos/seed/fit6b/600/800",
+      "https://picsum.photos/seed/fit6c/600/800"
+    ],
+    "description": "Legging de compressão profissional com tecnologia de tecido que melhora a circulação e reduz a fadiga muscular. Indicada para treinos de alta intensidade e corridas longas. Modelagem que não escorrega.",
+    "texture": "Poliamida 72% · Elastano 28% · Compressão profissional · Anti-celulite",
+    "sizes": [
+      "PP",
+      "P",
+      "M",
+      "G",
+      "GG",
+      "XGG"
+    ],
+    "colors": [
+      {
+        "name": "Preto",
+        "hex": "#1a1a1a",
+        "images": [
+          "https://picsum.photos/seed/fit6/600/800",
+          "https://picsum.photos/seed/fit6b/600/800"
+        ]
+      },
+      {
+        "name": "Rosa",
+        "hex": "#F472B6",
+        "images": [
+          "https://picsum.photos/seed/fit6d/600/800",
+          "https://picsum.photos/seed/fit6e/600/800"
+        ]
+      },
+      {
+        "name": "Verde",
+        "hex": "#22c55e",
+        "images": [
+          "https://picsum.photos/seed/fit6f/600/800",
+          "https://picsum.photos/seed/fit6g/600/800"
+        ]
+      }
+    ],
+    "deliveryDays": "7–12 dias úteis"
+  }
+]

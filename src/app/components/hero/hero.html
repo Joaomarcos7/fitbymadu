@@ -1,0 +1,110 @@
+<section class="relative min-h-screen flex items-center overflow-hidden bg-white">
+
+  <!-- Animated background orbs -->
+  <div class="orb-1 absolute top-[-10%] right-[-8%] w-[280px] h-[280px] sm:w-[550px] sm:h-[550px] bg-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="orb-2 absolute bottom-[-15%] left-[-5%] w-[220px] h-[220px] sm:w-[450px] sm:h-[450px] bg-pink-light/40 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="hidden sm:block absolute top-[30%] left-[40%] w-[300px] h-[300px] bg-pink/8 rounded-full blur-2xl pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 w-full py-24 lg:py-0 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen">
+
+    <!-- Text side -->
+    <div class="flex flex-col justify-center order-2 lg:order-1">
+
+      @if (showContent()) {
+        <span class="slide-up slide-up-1 inline-flex w-fit items-center gap-2 text-xs font-semibold tracking-widest text-pink uppercase mb-6 bg-pink/10 px-4 py-2 rounded-full border border-pink/20">
+          <span class="w-1.5 h-1.5 bg-pink rounded-full animate-pulse"></span>
+          Moda Fitness Feminina
+        </span>
+
+        <h1 class="font-tight font-black leading-[1.05] mb-6">
+          <span class="slide-up slide-up-2 block text-5xl sm:text-6xl lg:text-7xl text-near-black">Vista sua</span>
+          <span class="slide-up slide-up-3 block text-5xl sm:text-6xl lg:text-7xl gradient-text">melhor versão.</span>
+        </h1>
+
+        <p class="slide-up slide-up-4 text-near-black/55 text-lg sm:text-xl leading-relaxed mb-10 max-w-md">
+          Peças que unem estilo, conforto e performance — para você arrasar dentro e fora da academia.
+        </p>
+
+        <!-- CTAs -->
+        <div class="slide-up slide-up-4 flex flex-wrap gap-4 mb-12">
+          <a href="#catalogo"
+            class="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-pink/30 hover:shadow-pink/50 transition-all duration-300 hover:-translate-y-0.5">
+            Ver Catálogo
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a href="#historia"
+            class="inline-flex items-center gap-2 text-near-black font-semibold text-sm px-7 py-3.5 rounded-full border border-near-black/15 hover:border-pink hover:text-pink transition-all duration-300">
+            Nossa História
+          </a>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="slide-up slide-up-5 flex flex-wrap items-center gap-6 pt-6 border-t border-gray-100">
+          <div class="flex flex-col">
+            <span class="font-tight font-black text-2xl text-near-black">500+</span>
+            <span class="text-xs text-near-black/40 mt-0.5">Clientes felizes</span>
+          </div>
+          <div class="w-px h-8 bg-gray-200 hidden sm:block"></div>
+          <div class="flex flex-col">
+            <span class="font-tight font-black text-2xl text-near-black">4.9 ★</span>
+            <span class="text-xs text-near-black/40 mt-0.5">Avaliação média</span>
+          </div>
+          <div class="w-px h-8 bg-gray-200 hidden sm:block"></div>
+          <div class="flex flex-col">
+            <span class="font-tight font-black text-2xl text-near-black">2 anos</span>
+            <span class="text-xs text-near-black/40 mt-0.5">De história</span>
+          </div>
+        </div>
+      }
+
+    </div>
+
+    <!-- Image side -->
+    <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+      <!-- Decorative ring -->
+      <div class="absolute inset-0 m-auto w-[85%] aspect-square rounded-full border border-pink/15 pointer-events-none"></div>
+
+      <div class="relative w-full max-w-sm lg:max-w-none">
+        <!-- Floating badge -->
+        @if (showContent()) {
+          <div class="slide-up slide-up-2 absolute top-0 left-0 sm:-top-4 sm:-left-4 z-20 bg-white rounded-2xl shadow-xl shadow-pink/15 px-4 py-3 flex items-center gap-3 border border-pink/10">
+            <span class="text-xl">🔥</span>
+            <div>
+              <p class="font-tight font-bold text-near-black text-sm leading-none">Nova Coleção</p>
+              <p class="text-pink text-xs mt-0.5">Disponível agora</p>
+            </div>
+          </div>
+        }
+
+        <!-- Main image -->
+        <div class="relative rounded-3xl overflow-hidden aspect-[3/4] bg-pink-soft shadow-2xl shadow-pink/20">
+          <img
+            [src]="settings()?.heroImage ?? '/modelo1.jpg'"
+            alt="FitByMadu — moda fitness feminina"
+            class="w-full h-full object-cover"
+          />
+          <!-- subtle pink overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-pink/20 via-transparent to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- Price badge -->
+        @if (showContent()) {
+          <div class="slide-up slide-up-3 absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 z-20 bg-pink rounded-2xl shadow-lg shadow-pink/40 px-4 py-3 text-white">
+            <p class="text-xs font-medium opacity-80">a partir de</p>
+            <p class="font-tight font-black text-xl leading-none">{{ settings()?.heroPriceLabel ?? 'R$ 79,90' }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <span class="text-xs font-medium text-near-black uppercase tracking-widest">Scroll</span>
+    <div class="w-px h-8 bg-near-black/40 animate-pulse"></div>
+  </div>
+
+</section>

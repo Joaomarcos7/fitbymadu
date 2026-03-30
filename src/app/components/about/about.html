@@ -1,0 +1,74 @@
+<section id="historia" class="py-24 bg-pink-soft">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Animated stats row -->
+    <div appFadeIn class="stats-row grid grid-cols-3 gap-4 sm:gap-8 mb-20">
+      @for (stat of stats; track stat.label; let i = $index) {
+        <div class="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-sm border border-pink/10">
+          <p #counterEl class="font-tight font-black text-3xl sm:text-4xl gradient-text">0{{ stat.suffix }}</p>
+          <p class="text-near-black/50 text-xs sm:text-sm mt-2 font-medium">{{ stat.label }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text side -->
+      <div appFadeIn>
+        <span class="inline-block text-xs font-semibold tracking-widest text-pink uppercase mb-6 bg-pink/10 px-4 py-1.5 rounded-full border border-pink/20">
+          Nossa História
+        </span>
+
+        <h2 class="font-tight font-black text-4xl sm:text-5xl text-near-black leading-tight mb-6">
+          Nascemos para<br /><span class="gradient-text">empoderar mulheres.</span>
+        </h2>
+
+        <p class="text-near-black/60 text-base leading-relaxed mb-4">
+          A FitByMadu nasceu do sonho de Madu de criar roupas que fizessem cada mulher se sentir poderosa no treino. Cansada de escolher entre estilo e conforto, ela decidiu criar uma linha que une o melhor dos dois mundos.
+        </p>
+        <p class="text-near-black/60 text-base leading-relaxed mb-10">
+          Hoje, cada peça é pensada para acompanhar sua jornada — seja na academia, na corrida ou no dia a dia. Porque você merece se sentir incrível em todos os momentos.
+        </p>
+
+        <!-- Pillars -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
+            <div class="text-2xl mb-2">💪</div>
+            <p class="font-tight font-bold text-near-black text-sm">Autoestima</p>
+          </div>
+          <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
+            <div class="text-2xl mb-2">⚡</div>
+            <p class="font-tight font-bold text-near-black text-sm">Performance</p>
+          </div>
+          <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
+            <div class="text-2xl mb-2">🤍</div>
+            <p class="font-tight font-bold text-near-black text-sm">Conforto</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image side -->
+      <div appFadeIn [appFadeInDelay]="200" class="relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink/20 to-pink-light/20 rounded-3xl blur-2xl scale-105 pointer-events-none"></div>
+        <div class="relative rounded-3xl overflow-hidden aspect-[4/5] bg-pink-soft shadow-xl shadow-pink/20">
+          <img
+            src="https://picsum.photos/seed/madu/800/1000"
+            alt="FitByMadu — moda fitness feminina"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <!-- subtle overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-pink/30 via-transparent to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- Floating quote -->
+        <div class="hidden sm:block absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl shadow-pink/15 p-4 max-w-[200px] border border-pink/10">
+          <p class="text-near-black/70 text-xs leading-relaxed italic">"Cada peça conta uma história de superação."</p>
+          <p class="text-pink font-bold text-xs mt-2">— Maria Eduarda, fundadora</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,172 @@
+<div class="min-h-screen bg-gray-50">
+
+  <!-- Top bar -->
+  <header class="bg-white border-b border-gray-100 px-6 py-4 flex items-center gap-4">
+    <a routerLink="/admin/produtos" class="text-gray-400 hover:text-pink transition-colors">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
+      </svg>
+    </a>
+    <h1 class="font-tight font-black text-near-black">
+      {{ isEdit() ? 'Editar Produto' : 'Novo Produto' }}
+    </h1>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-8">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6">
+
+      <!-- Basic info -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+        <h2 class="font-tight font-bold text-near-black">Informações Básicas</h2>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Nome do produto *</label>
+            <input formControlName="title" type="text" placeholder="Ex: Legging High Waist"
+              class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Categoria *</label>
+            <select formControlName="tag"
+              class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink bg-white">
+              @for (tag of allTags; track tag) {
+                <option [value]="tag">{{ tag }}</option>
+              }
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Preço (R$) *</label>
+            <input formControlName="price" type="number" step="0.01" min="0" placeholder="89.90"
+              class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Prazo de entrega *</label>
+            <input formControlName="deliveryDays" type="text" placeholder="5–10 dias úteis"
+              class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+        <h2 class="font-tight font-bold text-near-black">Descrição</h2>
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 mb-1.5">Descrição completa *</label>
+          <textarea formControlName="description" rows="4" placeholder="Descreva as características da peça..."
+            class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink"></textarea>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 mb-1.5">Material / Textura *</label>
+          <input formControlName="texture" type="text" placeholder="Poliamida 80% · Elastano 20% · UV50+"
+            class="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h2 class="font-tight font-bold text-near-black mb-4">Tamanhos disponíveis</h2>
+        <div class="flex flex-wrap gap-3" formArrayName="sizes">
+          @for (size of allSizes; track size; let i = $index) {
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" [formControlName]="i" class="accent-pink w-4 h-4 rounded" />
+              <span class="font-tight font-bold text-sm" [class.text-pink]="sizesArray.at(i).value" [class.text-gray-400]="!sizesArray.at(i).value">{{ size }}</span>
+            </label>
+          }
+        </div>
+      </div>
+
+      <!-- General images -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="font-tight font-bold text-near-black">Imagens do produto</h2>
+          <button type="button" (click)="addImage()" class="text-xs font-semibold text-pink hover:text-pink-dark cursor-pointer">+ Adicionar</button>
+        </div>
+        <div formArrayName="images" class="space-y-3">
+          @for (ctrl of imagesArray.controls; track $index; let i = $index) {
+            <div class="flex items-center gap-3">
+              <input [formControlName]="i" type="url" placeholder="https://... ou use o upload"
+                class="flex-1 border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+              <app-image-upload [currentUrl]="ctrl.value ?? ''" (uploaded)="setImageUrl(i, $event)" />
+              @if (imagesArray.length > 1) {
+                <button type="button" (click)="removeImage(i)" class="text-gray-300 hover:text-red-400 transition-colors cursor-pointer text-lg leading-none">×</button>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Color variants -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="font-tight font-bold text-near-black">Variações de cor</h2>
+          <button type="button" (click)="addColor()" class="text-xs font-semibold text-pink hover:text-pink-dark cursor-pointer">+ Adicionar cor</button>
+        </div>
+
+        <div formArrayName="colors" class="space-y-6">
+          @for (colorGrp of colorsArray.controls; track $index; let ci = $index) {
+            <div [formGroupName]="ci" class="border border-gray-100 rounded-xl p-4 space-y-3">
+              <div class="flex items-center gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 mb-1">Nome da cor</label>
+                  <input formControlName="name" type="text" placeholder="Ex: Rosa"
+                    class="border border-gray-200 rounded-xl px-3 py-2 text-sm w-36 focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-gray-400 mb-1">Cor (hex)</label>
+                  <div class="flex items-center gap-2">
+                    <input formControlName="hex" type="color"
+                      class="w-10 h-10 rounded-lg border border-gray-200 cursor-pointer p-0.5" />
+                    <input formControlName="hex" type="text" placeholder="#F472B6"
+                      class="border border-gray-200 rounded-xl px-3 py-2 text-sm w-28 focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+                  </div>
+                </div>
+                @if (colorsArray.length > 1) {
+                  <button type="button" (click)="removeColor(ci)"
+                    class="ml-auto text-gray-300 hover:text-red-400 transition-colors cursor-pointer text-sm font-semibold self-end pb-1">
+                    Remover cor
+                  </button>
+                }
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label class="text-xs font-semibold text-gray-400">Imagens desta cor</label>
+                  <button type="button" (click)="addColorImage(ci)" class="text-xs text-pink font-semibold cursor-pointer">+ Imagem</button>
+                </div>
+                <div formArrayName="images" class="space-y-2">
+                  @for (imgCtrl of colorImages(ci).controls; track $index; let ii = $index) {
+                    <div class="flex items-center gap-3">
+                      <input [formControlName]="ii" type="url" placeholder="https://..."
+                        class="flex-1 border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink/30 focus:border-pink" />
+                      <app-image-upload [currentUrl]="imgCtrl.value ?? ''" (uploaded)="setColorImageUrl(ci, ii, $event)" />
+                      @if (colorImages(ci).length > 1) {
+                        <button type="button" (click)="removeColorImage(ci, ii)" class="text-gray-300 hover:text-red-400 transition-colors cursor-pointer text-lg leading-none">×</button>
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Error + Submit -->
+      @if (error()) {
+        <p class="text-red-500 text-sm bg-red-50 rounded-xl px-4 py-3">{{ error() }}</p>
+      }
+
+      <div class="flex gap-3 pb-8">
+        <button type="submit" [disabled]="saving()"
+          class="flex-1 sm:flex-none bg-pink hover:bg-pink-dark disabled:opacity-50 text-white font-bold text-sm px-8 py-3.5 rounded-xl transition-colors shadow-md shadow-pink/20 cursor-pointer">
+          {{ saving() ? 'Salvando...' : (isEdit() ? 'Salvar alterações' : 'Criar produto') }}
+        </button>
+        <a routerLink="/admin/produtos"
+          class="flex-1 sm:flex-none text-center border border-gray-200 text-near-black text-sm font-semibold px-8 py-3.5 rounded-xl hover:border-pink hover:text-pink transition-colors">
+          Cancelar
+        </a>
+      </div>
+
+    </form>
+  </main>
+</div>
