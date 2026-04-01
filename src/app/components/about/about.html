@@ -4,8 +4,8 @@
     <!-- Animated stats row -->
     <div appFadeIn class="stats-row grid grid-cols-3 gap-4 sm:gap-8 mb-20">
       @for (stat of stats; track stat.label; let i = $index) {
-        <div class="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-sm border border-pink/10">
-          <p #counterEl class="font-tight font-black text-3xl sm:text-4xl gradient-text">0{{ stat.suffix }}</p>
+        <div class="bg-white rounded-2xl p-4 sm:p-6 md:p-8 text-center shadow-sm border border-pink/10">
+          <p #counterEl class="font-tight font-black text-xl sm:text-3xl md:text-4xl gradient-text">0{{ stat.suffix }}</p>
           <p class="text-near-black/50 text-xs sm:text-sm mt-2 font-medium">{{ stat.label }}</p>
         </div>
       }
@@ -35,15 +35,15 @@
         <div class="grid grid-cols-3 gap-4">
           <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
             <div class="text-2xl mb-2">💪</div>
-            <p class="font-tight font-bold text-near-black text-sm">Autoestima</p>
+            <p class="font-tight font-bold text-near-black text-xs sm:text-sm">Autoestima</p>
           </div>
           <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
             <div class="text-2xl mb-2">⚡</div>
-            <p class="font-tight font-bold text-near-black text-sm">Performance</p>
+            <p class="font-tight font-bold text-near-black text-xs sm:text-sm">Performance</p>
           </div>
           <div class="bg-white rounded-2xl p-4 sm:p-5 text-center shadow-sm border border-pink/10 hover:-translate-y-1 transition-transform duration-300">
             <div class="text-2xl mb-2">🤍</div>
-            <p class="font-tight font-bold text-near-black text-sm">Conforto</p>
+            <p class="font-tight font-bold text-near-black text-xs sm:text-sm">Conforto</p>
           </div>
         </div>
       </div>
