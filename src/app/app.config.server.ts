@@ -17,7 +17,7 @@ function readJson<T>(path: string, fallback: T): T {
 }
 
 const dataDir = join(process.cwd(), 'data');
-const defaultSettings: SiteSettings = { heroImage: '/modelo1.jpg', heroPriceLabel: 'R$ 79,90', whatsappNumber: '' };
+const defaultSettings: SiteSettings = { heroImage: '/modelo1.jpg', heroPriceLabel: 'R$ 79,90', whatsappNumber: '5587991796903' };
 
 const serverConfig: ApplicationConfig = {
   providers: [

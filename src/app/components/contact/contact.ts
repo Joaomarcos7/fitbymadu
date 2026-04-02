@@ -12,7 +12,7 @@ export class Contact implements OnInit {
   private settingsService = inject(SettingsService);
 
   instagramUrl = 'https://instagram.com/fitbymadu';
-  whatsappUrl = signal('https://wa.me/5511999999999');
+  whatsappUrl = signal('https://wa.me/5587991796903');
 
   ngOnInit(): void {
     this.settingsService.get().subscribe((s) => {

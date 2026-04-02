@@ -67,7 +67,7 @@ export class ProductDetail implements OnInit {
 
   getWhatsAppUrl(): string {
     const it = this.item();
-    const num = this.whatsappNumber() || '5511999999999';
+    const num = this.whatsappNumber() || '5587991796903';
     if (!it) return `https://wa.me/${num}`;
     const size = this.selectedSize() ? ` - Tamanho: ${this.selectedSize()}` : '';
     const color = it.colors[this.selectedColorIdx()]?.name ?? '';
